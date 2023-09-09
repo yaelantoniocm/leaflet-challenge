@@ -2,6 +2,11 @@ Bootcamp of EdX and Tecnológico de Monterrey in Ciencia de Datos - Challenge 15
 
 Yael Antonio Calzada Martín
 
+You can view the files by opening the indexes found in their respective folders.
+
+
+**Any use of the api key external to me has legal consequences.**
+
 
 # Leaflet-Earthquake
 
@@ -81,5 +86,3 @@ Put each dataset into separate overlays that can be turned on and off independen
 Added layer controls to the map.
 
 <img width="1122" alt="image" src="https://user-images.githubusercontent.com/116701851/229044171-7cb6866f-5493-4a3a-a464-6de7c5c349e7.png">
-
-You can find the visualization link on  file:///Users/meeragnair/Desktop/leaflet/Starter_Code%203/Leaflet-/index.html
