@@ -25,7 +25,7 @@ function createMap(earthquakeData) {
   
     legend.onAdd = function() {
       const div = L.DomUtil.create("div", "info legend");
-      const grades = [0, 1, 2, 3, 4, 5];
+      const grades = [-10, 10,30, 50, 70, 90];
       let labels = [];
   
       grades.forEach((grade, index) => {
@@ -43,13 +43,13 @@ function createMap(earthquakeData) {
   
   // Function to get color based on magnitude
   function getColor(d) {
-    return d > 5 ? '#800026' :
-           d > 4 ? '#CB5F00' :
-           d > 3 ? '#EEA700' :
-           d > 2 ? '#DCC600' :
-           d > 1 ? '#CBC100' :
-                   '#13B601';
-  }
+    return d > 100 ? '#800026' :
+           d > 80  ? '#CB5F00' :
+           d > 60  ? '#EEA700' :
+           d > 40  ? '#DCC600' :
+           d > 20  ? '#CBC100' :
+                     '#13B601';
+}
     
 // Function to create features
   function createFeatures(earthquakeData) {
@@ -57,7 +57,7 @@ function createMap(earthquakeData) {
       pointToLayer: function(feature, latlng) {
         return L.circleMarker(latlng, {
           radius: feature.properties.mag * 5,
-          fillColor: getColor(feature.properties.mag),
+          fillColor: getColor(feature.geometry.coordinates[2]),
           color: "#000",
           weight: 1,
           opacity: 1,
@@ -65,8 +65,8 @@ function createMap(earthquakeData) {
         });
       },
       onEachFeature: function(feature, layer) {
-        layer.bindPopup(`<h3>${feature.properties.place}</h3><hr><p>${new Date(feature.properties.time)}</p><hr><p>Magnitude: ${feature.properties.mag}</p>`);
-      }
+        layer.bindPopup(`<h3>${feature.properties.place}</h3><hr><p>${new Date(feature.properties.time)}</p><hr><p>Profundidad: ${feature.geometry.coordinates[2]} km</p>`);
+    }
     });
   
     // Send our earthquakes layer to the createMap function
