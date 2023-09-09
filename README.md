@@ -1,4 +1,4 @@
-Bootcamp of EdX and Tecnológico de Monterrey in Ciencia de Datos. Challenge 15
+Bootcamp of EdX and Tecnológico de Monterrey in Ciencia de Datos - Challenge 15
 
 Yael Antonio Calzada Martín
 
